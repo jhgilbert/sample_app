@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user,  only: [:index, :edit, :update]
+  before_filter :signed_in_user,  only: [:index, :edit, :update, :destroy]
   before_filter :correct_user,    only: [:edit, :update]
   
   def show
@@ -32,6 +32,12 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User destroyed."
+    redirect_to users_url
   end
   
   def index
