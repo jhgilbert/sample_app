@@ -67,9 +67,9 @@ describe "Authentication" do
             end
           end
         end
-      end
+    end
       
-      describe "in the Users controller" do
+    describe "in the Users controller" do
         
       describe "visiting the edit page" do
         before { visit edit_user_path(user) }
