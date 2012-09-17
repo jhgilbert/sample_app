@@ -24,4 +24,9 @@ describe Micropost do
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
     end
   end
+  
+  describe "when user_id is not present" do
+    before { @micropost.user_id = nil }
+    it { should_not be_valid }
+  end
 end
