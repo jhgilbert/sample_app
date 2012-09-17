@@ -34,6 +34,9 @@ class UsersController < ApplicationController
     end
   end
   
+  def index
+  end
+  
   private
   
     def signed_in_user
